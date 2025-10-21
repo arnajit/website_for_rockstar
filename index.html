@@ -46,18 +46,30 @@
             background-color: #222;
             color: white;
         }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <select id="languageSelect" class="form-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
     <div class="hero-section">
-        <h1>Pritika: The Next Big Thing in Rock!</h1>
+        <h1 id="heroText">Pritika: The Next Big Thing in Rock!</h1>
     </div>
     <div class="marquee">
-        <p>🎤 Don't miss out on Pritika's upcoming tour dates! Stay tuned! 🎤</p>
+        <p id="marqueeText">🎤 Don't miss out on Pritika's upcoming tour dates! Stay tuned! 🎤</p>
     </div>
     <div class="content">
-        <h2>About Pritika</h2>
-        <p>Pritika has been captivating audiences with her powerful vocals and dynamic stage presence. Starting her career in small clubs, she's now on the verge of her first international tour.</p>
+        <h2 id="aboutTitle">About Pritika</h2>
+        <p id="aboutText">Pritika has been captivating audiences with her powerful vocals and dynamic stage presence. Starting her career in small clubs, she's now on the verge of her first international tour.</p>
         <h3>Gallery</h3>
         <div class="row">
             <div class="col-md-4">
@@ -79,7 +91,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Placeholder for any specific jQuery functionality
+            const translations = {
+                en: {
+                    heroText: "Pritika: The Next Big Thing in Rock!",
+                    marqueeText: "🎤 Don't miss out on Pritika's upcoming tour dates! Stay tuned! 🎤",
+                    aboutTitle: "About Pritika",
+                    aboutText: "Pritika has been captivating audiences with her powerful vocals and dynamic stage presence. Starting her career in small clubs, she's now on the verge of her first international tour."
+                },
+                es: {
+                    heroText: "Pritika: ¡La próxima gran estrella del rock!",
+                    marqueeText: "🎤 ¡No te pierdas las próximas fechas de la gira de Pritika! ¡Mantente atento! 🎤",
+                    aboutTitle: "Sobre Pritika",
+                    aboutText: "Pritika ha cautivado al público con su potente voz y presencia escénica dinámica. Comenzando su carrera en pequeños clubes, ahora está al borde de su primera gira internacional."
+                }
+            };
+
+            $('#languageSelect').change(function() {
+                const lang = $(this).val();
+                $('#heroText').text(translations[lang].heroText);
+                $('#marqueeText').text(translations[lang].marqueeText);
+                $('#aboutTitle').text(translations[lang].aboutTitle);
+                $('#aboutText').text(translations[lang].aboutText);
+            });
         });
     </script>
 </body>
