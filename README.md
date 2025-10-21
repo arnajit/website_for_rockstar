@@ -44,6 +44,15 @@ The application uses:
 - Code refactored for improved performance
 - UI/UX improvements
 
+### Round 3 - Enhancement (2025-10-21 20:11)
+**Brief:** create option to switch a dark mode in the website
+
+**Updates Made:**
+- Enhanced functionality based on new requirements
+- Additional features implemented
+- Code refactored for improved performance
+- UI/UX improvements
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
