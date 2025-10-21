@@ -35,5 +35,15 @@ The application uses:
 - GitHub Pages deployment
 - Responsive design
 
+### Round 2 - Enhancement (2025-10-21 20:07)
+**Brief:** the website can be changeed in 2 language translate option
+
+**Updates Made:**
+- Enhanced functionality based on new requirements
+- Additional features implemented
+- Code refactored for improved performance
+- UI/UX improvements
+
+
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
