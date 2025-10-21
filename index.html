@@ -10,6 +10,10 @@
             background-color: #f4f4f9;
             font-family: 'Arial', sans-serif;
         }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
         .hero-section {
             background: url('stage-background.jpg') no-repeat center center/cover;
             height: 90vh;
@@ -46,11 +50,14 @@
             background-color: #222;
             color: white;
         }
-        .language-selector {
+        .language-selector, .mode-selector {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
+        }
+        .mode-selector {
+            right: 140px;
         }
     </style>
 </head>
@@ -60,6 +67,9 @@
             <option value="en">English</option>
             <option value="es">Español</option>
         </select>
+    </div>
+    <div class="mode-selector">
+        <button id="toggleDarkMode" class="btn btn-secondary">Toggle Dark Mode</button>
     </div>
     <div class="hero-section">
         <h1 id="heroText">Pritika: The Next Big Thing in Rock!</h1>
@@ -112,6 +122,10 @@
                 $('#marqueeText').text(translations[lang].marqueeText);
                 $('#aboutTitle').text(translations[lang].aboutTitle);
                 $('#aboutText').text(translations[lang].aboutText);
+            });
+
+            $('#toggleDarkMode').click(function() {
+                $('body').toggleClass('dark-mode');
             });
         });
     </script>
